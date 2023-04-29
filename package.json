@@ -1,0 +1,9 @@
+{
+  "license": "MIT",
+  "devDependencies": {
+    "firebase-tools": "^11.29.1"
+  },
+  "scripts": {
+    "ci": "echo 'done'"
+  }
+}
