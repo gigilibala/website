@@ -46,6 +46,8 @@ build/Release
 
 # Dependency directories
 node_modules/
+/.pnp
+.pnp.js
 
 # Optional npm cache directory
 .npm
@@ -64,3 +66,23 @@ node_modules/
 
 # dotenv environment variables file
 .env
+# local env files
+.env*.local
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
