@@ -1,16 +1,13 @@
-import Link from "next/link";
+import Layout from "@/components/Layout";
 
 export default function Home() {
   return (
     <main>
-      <ul>
-        <li>
-          <Link href={`/`}>Home</Link>
-        </li>
-        <li>
-          <Link href={`/about`}>About</Link>
-        </li>
-      </ul>
+      <Layout>
+        <div>
+          <p>content</p>
+        </div>
+      </Layout>
     </main>
   );
 }
