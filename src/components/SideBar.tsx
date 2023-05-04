@@ -1,9 +1,6 @@
-import logo from "@/public/spongebob.png";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-
-const name = "Amin Hassani";
 
 export default function SideBar() {
   const [showSideBar, setShowSideBar] = useState<boolean>(true);
@@ -45,7 +42,12 @@ export default function SideBar() {
         } md:relative md:translate-x-0 transition duration-200 ease-in-out min-h-screen`}
       >
         <div className="px-3 py-3">
-          <Image src={logo} alt={name} />
+          <Image
+            src={"/spongebob.png"}
+            alt={"Amin Hassani"}
+            width={200}
+            height={200}
+          />
         </div>
         <nav className="uppercase">
           <Link
