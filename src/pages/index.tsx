@@ -4,9 +4,7 @@ export default function Home() {
   return (
     <main>
       <Layout>
-        <div>
-          <p>content</p>
-        </div>
+        <p>content</p>
       </Layout>
     </main>
   );

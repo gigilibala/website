@@ -9,8 +9,8 @@ export default function SideBar() {
   const [showSideBar, setShowSideBar] = useState<boolean>(true);
 
   return (
-    // Mobile menu bar
     <section>
+      {/* Mobile menu bar */}
       <div className=" bg-gray-800 text-gray-300 flex items-center justify-between md:hidden">
         {/* Replace with your picture maybe. */}
         <Link href="/" className="p-4">
@@ -37,10 +37,12 @@ export default function SideBar() {
           </svg>
         </button>
       </div>
+
+      {/* Sidebar */}
       <aside
         className={`w-64 bg-gray-800 text-gray-300 px-3 absolute inset-y-0 left-0 transform ${
           showSideBar ? "-translate-x-full" : ""
-        } md:relative md:translate-x-0 transition duration-200 ease-in-out`}
+        } md:relative md:translate-x-0 transition duration-200 ease-in-out min-h-screen`}
       >
         <div className="px-3 py-3">
           <Image src={logo} alt={name} />
@@ -52,8 +54,23 @@ export default function SideBar() {
           >
             Home
           </Link>
-          <Link href="/about" className="block py-2 px-4 rounded ">
+          <Link
+            href="/about"
+            className="block py-2 px-4 rounded transition duration-100 hover:bg-gray-600"
+          >
             About
+          </Link>
+          <Link
+            href="/impossible_list"
+            className="block py-2 px-4 rounded transition duration-100 hover:bg-gray-600"
+          >
+            Impossible List
+          </Link>
+          <Link
+            href="/learning"
+            className="block py-2 px-4 rounded transition duration-100 hover:bg-gray-600"
+          >
+            Learning
           </Link>
         </nav>
       </aside>
