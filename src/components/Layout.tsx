@@ -1,5 +1,5 @@
-import SideBar from "@/components/SideBar";
-import { PropsWithChildren } from "react";
+import SideBar from '@/components/SideBar'
+import { PropsWithChildren } from 'react'
 
 export default function Layout({ children }: PropsWithChildren) {
   return (
@@ -7,5 +7,5 @@ export default function Layout({ children }: PropsWithChildren) {
       <SideBar />
       <div className="flex-1 bg-green-50">{children}</div>
     </div>
-  );
+  )
 }
