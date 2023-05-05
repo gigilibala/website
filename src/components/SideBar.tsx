@@ -1,9 +1,9 @@
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
+import Image from 'next/image'
+import Link from 'next/link'
+import { useState } from 'react'
 
 export default function SideBar() {
-  const [showSideBar, setShowSideBar] = useState<boolean>(true);
+  const [showSideBar, setShowSideBar] = useState<boolean>(true)
 
   return (
     <section>
@@ -38,13 +38,13 @@ export default function SideBar() {
       {/* Sidebar */}
       <aside
         className={`w-64 bg-gray-800 text-gray-300 px-3 absolute inset-y-0 left-0 transform ${
-          showSideBar ? "-translate-x-full" : ""
+          showSideBar ? '-translate-x-full' : ''
         } md:relative md:translate-x-0 transition duration-200 ease-in-out h-screen`}
       >
         <div className="px-3 py-3">
           <Image
-            src={"/spongebob.png"}
-            alt={"Amin Hassani"}
+            src={'/spongebob.png'}
+            alt={'Amin Hassani'}
             width={200}
             height={200}
           />
@@ -77,5 +77,5 @@ export default function SideBar() {
         </nav>
       </aside>
     </section>
-  );
+  )
 }

@@ -3,5 +3,5 @@ export default function About() {
     <main>
       <h1>About Amin Hassani</h1>
     </main>
-  );
+  )
 }

@@ -8,17 +8,18 @@
     "build": "next build",
     "start:next": "next start",
     "start:out": "serve out",
-    "lint": "next lint",
+    "lint:check": "prettier --check .",
+    "lint:fix": "prettier --write .",
     "deploy": "firebase deploy"
   },
   "devDependencies": {
     "@types/node": "18.16.3",
     "@types/react": "18.2.0",
     "@types/react-dom": "18.2.1",
-    "eslint": "8.39.0",
-    "eslint-config-next": "13.3.4",
     "firebase-tools": "^11.29.1",
     "lorem-ipsum": "^2.0.8",
+    "prettier": "^2.8.8",
+    "prettier-plugin-organize-imports": "^3.2.2",
     "serve": "^14.2.0",
     "typescript": "5.0.4"
   },
