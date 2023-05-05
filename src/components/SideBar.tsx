@@ -8,28 +8,28 @@ export default function SideBar() {
   return (
     <section>
       {/* Mobile menu bar */}
-      <div className=" bg-gray-800 text-gray-300 flex items-center justify-between md:hidden">
+      <div className=' bg-gray-800 text-gray-300 flex items-center justify-between md:hidden'>
         {/* Replace with your picture maybe. */}
-        <Link href="/" className="p-4">
+        <Link href='/' className='p-4'>
           Amin Hassani
         </Link>
 
         <button
-          className="p-4 focus:outline-none focus:bg-grey-700"
+          className='p-4 focus:outline-none focus:bg-grey-700'
           onClick={() => setShowSideBar((prev) => !prev)}
         >
           <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            viewBox='0 0 24 24'
             strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6"
+            stroke='currentColor'
+            className='w-6 h-6'
           >
             <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'
             />
           </svg>
         </button>
@@ -41,7 +41,7 @@ export default function SideBar() {
           showSideBar ? '-translate-x-full' : ''
         } md:relative md:translate-x-0 transition duration-200 ease-in-out h-screen`}
       >
-        <div className="px-3 py-3">
+        <div className='px-3 py-3'>
           <Image
             src={'/spongebob.png'}
             alt={'Amin Hassani'}
@@ -49,28 +49,28 @@ export default function SideBar() {
             height={200}
           />
         </div>
-        <nav className="uppercase">
+        <nav className='uppercase'>
           <Link
-            href="/"
-            className="block py-2 px-4 rounded transition duration-100 hover:bg-gray-600"
+            href='/'
+            className='block py-2 px-4 rounded transition duration-100 hover:bg-gray-600'
           >
             Home
           </Link>
           <Link
-            href="/about"
-            className="block py-2 px-4 rounded transition duration-100 hover:bg-gray-600"
+            href='/about'
+            className='block py-2 px-4 rounded transition duration-100 hover:bg-gray-600'
           >
             About
           </Link>
           <Link
-            href="/impossible_list"
-            className="block py-2 px-4 rounded transition duration-100 hover:bg-gray-600"
+            href='/impossible_list'
+            className='block py-2 px-4 rounded transition duration-100 hover:bg-gray-600'
           >
             Impossible List
           </Link>
           <Link
-            href="/learning"
-            className="block py-2 px-4 rounded transition duration-100 hover:bg-gray-600"
+            href='/learning'
+            className='block py-2 px-4 rounded transition duration-100 hover:bg-gray-600'
           >
             Learning
           </Link>

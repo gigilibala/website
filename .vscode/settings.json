@@ -4,5 +4,6 @@
   },
   "tailwindCSS.includeLanguages": {
     "plaintext": "html"
-  }
+  },
+  "files.autoSave": "afterDelay"
 }
