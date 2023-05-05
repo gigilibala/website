@@ -39,7 +39,7 @@ export default function SideBar() {
       <aside
         className={`w-64 bg-gray-800 text-gray-300 px-3 absolute inset-y-0 left-0 transform ${
           showSideBar ? "-translate-x-full" : ""
-        } md:relative md:translate-x-0 transition duration-200 ease-in-out min-h-screen`}
+        } md:relative md:translate-x-0 transition duration-200 ease-in-out h-screen`}
       >
         <div className="px-3 py-3">
           <Image

@@ -3,9 +3,9 @@ import { PropsWithChildren } from "react";
 
 export default function Layout({ children }: PropsWithChildren) {
   return (
-    <div className="relative md:flex min-h-screen">
+    <div className="relative md:flex">
       <SideBar />
-      <div className="flex-1 bg-green-50 min-h-screen">{children}</div>
+      <div className="flex-1 bg-green-50">{children}</div>
     </div>
   );
 }
