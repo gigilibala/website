@@ -1,23 +1,27 @@
+import { loremIpsum } from 'lorem-ipsum'
 import Head from 'next/head'
+import { useEffect, useState } from 'react'
 
 export default function Home() {
+  const [content, setContent] = useState('')
+  useEffect(() => {
+    setContent(loremIpsum({ count: 10, units: 'paragraphs' }))
+  }, [])
+
   return (
     <main>
       <Head>
         <title>Amin Hassani</title>
       </Head>
-      <div>Content is mine and everything that comes with it is mine also</div>
-      {/* <Layout>
-        <div className="h-screen-full w-full text-center">
-          <div className="w-full h-full mx-auto flex flex-col justify-center items-center">
-            <p>
-              My name is Amin Hassani! I am a software engineer based on San
-              Francisco bay area.
-            </p>
-            <p>{loremIpsum({ count: 10, units: 'paragraphs' })}</p>
-          </div>
+      <div className='max-w-xl text-center'>
+        <div className='w-full h-full mx-auto flex flex-col justify-center items-center'>
+          <p>
+            My name is Amin Hassani! I am a software engineer based on San
+            Francisco bay area.
+          </p>
+          {/* <p>{content}</p> */}
         </div>
-      </Layout> */}
+      </div>
     </main>
   )
 }

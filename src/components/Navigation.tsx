@@ -16,7 +16,7 @@ export type NavigationProps = {
 export function Topbar(props: NavigationProps) {
   return (
     <div>
-      <div className='static md:hidden top-0 inset-x-0 h-20 shadow-md z-30'>
+      <div className='fixed md:hidden w-full top-0 inset-x-0 h-20 shadow-md z-30 bg-slate-300'>
         <div className='flex justify-between items-center w-full h-full px-2'>
           <Image
             src='/spongebob.png'
@@ -40,8 +40,8 @@ export function Navbar(props: NavigationProps) {
   return (
     <div>
       <aside
-        className={`fixed md:relative left-0 h-screen w-80 z-40 bg-gray-600 transform transition ease-in duration-300 md:translate-x-0 ${
-          props.show ? '-translate-x-full' : ''
+        className={`fixed md:visible inset-y-0 left-0 z-40 w-80 bg-gray-600 ${
+          props.show ? '' : 'invisible'
         }`}
       >
         <div className='flex flex-col justify-between items-center w-full p-10 text-white'>
@@ -75,6 +75,9 @@ export function Navbar(props: NavigationProps) {
             <Link href='/resume' className={navClassName}>
               Resume
             </Link>
+            <Link href='/travels' className={navClassName}>
+              Travels
+            </Link>
           </nav>
           <div className='flex top-20 justify-between items-center w-[80%]'>
             <Link href={'https://github.com/gigilibala'} target='_blank'>
@@ -93,5 +96,13 @@ export function Navbar(props: NavigationProps) {
         </div>
       </aside>
     </div>
+  )
+}
+
+export function DummyNavBar() {
+  return (
+    <div
+      className={`md:invisible inset-y-0 left-0 z-40 md:w-80 flex-shrink-0`}
+    ></div>
   )
 }
