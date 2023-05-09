@@ -35,3 +35,9 @@
     @apply my-2 border-0 border-t-2 border-amber-600;
   }
 }
+
+@layer utilities {
+  .devicon {
+    @apply w-20 h-20;
+  }
+}

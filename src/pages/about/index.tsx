@@ -1,7 +1,13 @@
-export default function About() {
+import About from '@/components/About'
+import Head from 'next/head'
+
+export default () => {
   return (
     <main>
-      <h1>About Me</h1>
+      <Head>
+        <title>Amin Hassani</title>
+      </Head>
+      <About />
     </main>
   )
 }
