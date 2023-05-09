@@ -17,7 +17,8 @@ export default function Home() {
         <div className='w-full h-full mx-auto flex flex-col justify-center items-center'>
           <p>
             My name is Amin Hassani! I am a software engineer based on San
-            Francisco bay area.
+            Francisco bay area. I love building and learning new things. Hit me
+            up if you have anything in mind.
           </p>
           {/* <p>{content}</p> */}
         </div>
