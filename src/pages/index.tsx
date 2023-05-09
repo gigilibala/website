@@ -2,7 +2,7 @@ import { loremIpsum } from 'lorem-ipsum'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
 
-export default function Home() {
+export default () => {
   const [content, setContent] = useState('')
   useEffect(() => {
     setContent(loremIpsum({ count: 10, units: 'paragraphs' }))
