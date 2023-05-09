@@ -1,20 +1,24 @@
+import Footer from '@/components/Footer'
 import { DummyNavBar, Navbar, Topbar } from '@/components/Navigation'
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import { useState } from 'react'
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [showSideBar, setShowSideBar] = useState<boolean>(true)
+  const [showSideBar, setShowSideBar] = useState<boolean>(false)
   function toggle() {
     setShowSideBar((prev) => !prev)
   }
 
   return (
-    <div className='flex flex-col'>
+    <div>
       <Topbar show={showSideBar} toggle={toggle} />
       <div className='flex-1 flex py-20'>
         <DummyNavBar />
-        <Component {...pageProps} />
+        <div className='flex-1 flex flex-col'>
+          <Component {...pageProps} />
+          <Footer />
+        </div>
       </div>
       <Navbar show={showSideBar} toggle={toggle} />
     </div>

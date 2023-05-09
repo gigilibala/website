@@ -34,9 +34,10 @@ export function Topbar(props: NavigationProps) {
 }
 
 export function Navbar(props: NavigationProps) {
+  // TODO: Add a close button to support narrow devices.
   const navClassName =
-    'block p-2 rounded transition duration-100 hover:text-orange-100 hover:scale-105'
-  const socialMediaClassName = 'hover:fill-blue-500 hover:scale-150'
+    'block p-2 rounded transition duration-100 hover:text-orange-400 hover:scale-105'
+  const socialMediaClassName = 'hover:fill-orange-400 hover:scale-150'
   return (
     <div>
       <aside
@@ -79,7 +80,7 @@ export function Navbar(props: NavigationProps) {
               Travels
             </Link>
           </nav>
-          <div className='flex top-20 justify-between items-center w-[80%]'>
+          <div className='flex top-20 justify-between items-center w-[90%]'>
             <Link href={'https://github.com/gigilibala'} target='_blank'>
               <AiOutlineGithub size={40} className={socialMediaClassName} />
             </Link>
