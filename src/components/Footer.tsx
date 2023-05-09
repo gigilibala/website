@@ -5,7 +5,7 @@ export default function Footer() {
   const year = new Date().getFullYear()
   return (
     <div className='flex flex-col justify-center items-center'>
-      <hr className='bg-gray-400 w-[80%] h-1 my-3' />
+      <hr className='w-[80%] my-7' />
       <div>{`${copyright} ${year} ${NAME}`}</div>
     </div>
   )
