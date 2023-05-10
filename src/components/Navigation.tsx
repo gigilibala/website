@@ -4,6 +4,7 @@ import {
   AiFillInstagram,
   AiFillLinkedin,
   AiFillTwitterCircle,
+  AiOutlineCloseCircle,
   AiOutlineGithub,
 } from 'react-icons/ai'
 import { FiMenu } from 'react-icons/fi'
@@ -25,7 +26,7 @@ export function Topbar(props: NavigationProps) {
             height={50}
           />
           <div className='px-4 cursor-pointer hover:scale-125'>
-            <FiMenu size={30} onClick={() => props.toggle()} />
+            <FiMenu size={30} onClick={props.toggle} />
           </div>
         </div>
       </div>
@@ -34,7 +35,6 @@ export function Topbar(props: NavigationProps) {
 }
 
 export function Navbar(props: NavigationProps) {
-  // TODO: Add a close button to support narrow devices.
   const navClassName =
     'block p-2 rounded transition duration-100 hover:text-orange-400 hover:scale-105'
   const socialMediaClassName = 'hover:fill-orange-400 hover:scale-150'
@@ -46,9 +46,12 @@ export function Navbar(props: NavigationProps) {
         }`}
       >
         <div className='flex flex-col justify-between items-center w-full p-10 text-white'>
+          <div className='px-4 cursor-pointer hover:scale-125 self-end'>
+            <AiOutlineCloseCircle size={30} onClick={props.toggle} />
+          </div>
           <div className='p-5 text-3xl font-bold arial'>Amin Hassani</div>
           <div className='p3'>
-            <Link href='/'>
+            <Link href='/' onClick={props.toggle}>
               <Image
                 src='/spongebob.png'
                 alt='Amin Hassani'
@@ -58,40 +61,76 @@ export function Navbar(props: NavigationProps) {
             </Link>
           </div>
           <nav className='uppercase py-10'>
-            <Link href='/' className={navClassName}>
+            <Link href='/' className={navClassName} onClick={props.toggle}>
               Home
             </Link>
-            <Link href='/about' className={navClassName}>
+            <Link href='/about' className={navClassName} onClick={props.toggle}>
               About
             </Link>
-            <Link href='/impossible_list' className={navClassName}>
+            <Link
+              href='/impossible_list'
+              className={navClassName}
+              onClick={props.toggle}
+            >
               Impossible List
             </Link>
-            <Link href='/learning' className={navClassName}>
+            <Link
+              href='/learning'
+              className={navClassName}
+              onClick={props.toggle}
+            >
               Learning
             </Link>
-            <Link href='/projects' className={navClassName}>
+            <Link
+              href='/projects'
+              className={navClassName}
+              onClick={props.toggle}
+            >
               Projects
             </Link>
-            <Link href='/resume' className={navClassName}>
+            <Link
+              href='/resume'
+              className={navClassName}
+              onClick={props.toggle}
+            >
               Resume
             </Link>
-            <Link href='/travels' className={navClassName}>
+            <Link
+              href='/travels'
+              className={navClassName}
+              onClick={props.toggle}
+            >
               Travels
             </Link>
           </nav>
           <div className='flex top-20 justify-between items-center w-[90%]'>
             <Link href={'https://github.com/gigilibala'} target='_blank'>
-              <AiOutlineGithub size={40} className={socialMediaClassName} />
+              <AiOutlineGithub
+                size={40}
+                className={socialMediaClassName}
+                onClick={props.toggle}
+              />
             </Link>
             <Link href={'https://www.linkedin.com/in/aminhassani'}>
-              <AiFillLinkedin size={40} className={socialMediaClassName} />
+              <AiFillLinkedin
+                size={40}
+                className={socialMediaClassName}
+                onClick={props.toggle}
+              />
             </Link>
             <Link href={'https://twitter.com/gigilibala'}>
-              <AiFillTwitterCircle size={40} className={socialMediaClassName} />
+              <AiFillTwitterCircle
+                size={40}
+                className={socialMediaClassName}
+                onClick={props.toggle}
+              />
             </Link>
             <Link href={'https://www.instagram.com/gigilibala4/'}>
-              <AiFillInstagram size={40} className={socialMediaClassName} />
+              <AiFillInstagram
+                size={40}
+                className={socialMediaClassName}
+                onClick={props.toggle}
+              />
             </Link>
           </div>
         </div>
