@@ -36,8 +36,9 @@ export function Topbar(props: NavigationProps) {
 
 export function Navbar(props: NavigationProps) {
   const navClassName =
-    'block p-2 rounded transition duration-100 hover:text-orange-400 hover:scale-105'
-  const socialMediaClassName = 'hover:fill-orange-400 hover:scale-150'
+    'block p-2 rounded transition duration-100 hover:text-orange-400 hover:scale-105 text-white visited:text-white'
+  const socialMediaClassName =
+    'hover:fill-orange-400 hover:scale-150 fill-white'
   return (
     <div>
       <aside
@@ -111,21 +112,27 @@ export function Navbar(props: NavigationProps) {
                 onClick={props.toggle}
               />
             </Link>
-            <Link href={'https://www.linkedin.com/in/aminhassani'}>
+            <Link
+              href={'https://www.linkedin.com/in/aminhassani'}
+              target='_blank'
+            >
               <AiFillLinkedin
                 size={40}
                 className={socialMediaClassName}
                 onClick={props.toggle}
               />
             </Link>
-            <Link href={'https://twitter.com/gigilibala'}>
+            <Link href={'https://twitter.com/gigilibala'} target='_blank'>
               <AiFillTwitterCircle
                 size={40}
                 className={socialMediaClassName}
                 onClick={props.toggle}
               />
             </Link>
-            <Link href={'https://www.instagram.com/gigilibala4/'}>
+            <Link
+              href={'https://www.instagram.com/gigilibala4/'}
+              target='_blank'
+            >
               <AiFillInstagram
                 size={40}
                 className={socialMediaClassName}
