@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function About() {
   return (
-    <div className='flex flex-col px-10 py-10 w-ma'>
+    <div className='px-10 py-10'>
       <div className='space-y-10'>
         <h1 className='capitalize'>About me!</h1>
         <hr />
