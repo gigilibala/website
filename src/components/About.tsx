@@ -1,5 +1,6 @@
 import { SvgCollection } from '@/misc/constants'
 import Link from 'next/link'
+import { Tooltip } from 'react-tooltip'
 
 export default function About() {
   return (
@@ -42,8 +43,17 @@ export default function About() {
           Some of the primary languages and tools I have professional experience
           with include:
           <div className='flex flex-wrap mt-10'>
-            {Object.values(SvgCollection).map((value) => (
-              <img src={value} className='devicon' />
+            {Object.entries(SvgCollection).map(([key, value]) => (
+              <div key={key}>
+                <img
+                  src={value}
+                  className='devicon'
+                  data-tooltip-content={key}
+                  data-tooltip-id={key}
+                  data-tooltip-float={true}
+                />
+                <Tooltip id={key} className='capitalize' />
+              </div>
             ))}
           </div>
         </div>
