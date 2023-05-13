@@ -11,7 +11,8 @@ export const SvgCollection = {
     'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg',
   confluence:
     'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/confluence/confluence-original.svg',
-  cpp: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg',
+  'c++':
+    'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg',
   docker:
     'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
   firebase:
@@ -49,9 +50,9 @@ export const SvgCollection = {
     'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
   python:
     'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-  rasberrypi:
+  rasberryPi:
     'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg',
-  react:
+  reactNative:
     'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
   solidity:
     'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg',
@@ -63,7 +64,7 @@ export const SvgCollection = {
   vscode:
     'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg',
   yarn: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/yarn/yarn-original.svg',
-  pytest:
+  pyTest:
     'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytest/pytest-original.svg',
   gentoo:
     'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gentoo/gentoo-plain.svg',

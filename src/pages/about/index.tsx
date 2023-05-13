@@ -1,5 +1,6 @@
 import About from '@/components/About'
 import Head from 'next/head'
+import 'react-tooltip/dist/react-tooltip.css'
 
 export default () => {
   return (
