@@ -1,5 +1,5 @@
+import PageHead from '@/components/PageHead'
 import { loremIpsum } from 'lorem-ipsum'
-import Head from 'next/head'
 import { useEffect, useState } from 'react'
 
 export default () => {
@@ -10,9 +10,7 @@ export default () => {
 
   return (
     <main>
-      <Head>
-        <title>Amin Hassani</title>
-      </Head>
+      <PageHead />
       <div className='max-w-xl text-center'>
         <div className='w-full h-full mx-auto flex flex-col justify-center items-center'>
           <p>
