@@ -1,3 +1,4 @@
+import ExLink from '@/components/ExLink'
 import { NAME } from '@/misc/constants'
 
 export default function Footer() {
@@ -6,7 +7,14 @@ export default function Footer() {
   return (
     <div className='flex flex-col justify-center items-center'>
       <hr className='w-[80%] my-7' />
-      <div>{`${copyright} ${year} ${NAME}`}</div>
+      <p>{`${copyright} ${year} ${NAME}`}</p>
+      <p>
+        Powered by{' '}
+        <ExLink href={'https://github.com/gigilibala/personal-website'}>
+          GitHub
+        </ExLink>{' '}
+        and <ExLink href={'https://firebase.google.com/'}>Firebase</ExLink>
+      </p>
     </div>
   )
 }
