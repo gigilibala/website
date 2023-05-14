@@ -2,9 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* https://fonts.google.com/specimen/Karla?query=karla */
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400&display=swap');
+
 @layer base {
   body {
-    @apply bg-gray-200 tracking-wide;
+    @apply bg-gray-50 text-[#1f2937];
   }
 
   h1 {
