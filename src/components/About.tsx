@@ -1,6 +1,6 @@
 import { SvgCollection } from '@/misc/constants'
-import Link from 'next/link'
 import { Tooltip } from 'react-tooltip'
+import ExLink from './ExLink'
 
 export default function About() {
   return (
@@ -26,16 +26,11 @@ export default function About() {
             I graduated from the University of Alabama at Birmingham with a PhD
             degree in Computer Science, where I worked on Exa-scale
             fault-tolerant message passing systems. I've also worked at{' '}
-            <Link href={'https://www.google.com'} target='_blank'>
-              Google
-            </Link>{' '}
-            and{' '}
-            <Link href={'https://www.nuro.ai'} target='_blank'>
-              Nuro
-            </Link>{' '}
-            on a variety of open source and closed source projects. Please refer
-            to my resume below for a full list of my experience and skills,
-            including my open-source projects.
+            <ExLink href={'https://www.google.com'}>Google</ExLink> and{' '}
+            <ExLink href={'https://www.nuro.ai'}>Nuro</ExLink> on a variety of
+            open source and closed source projects. Please refer to my resume
+            below for a full list of my experience and skills, including my
+            open-source projects.
           </p>
         </div>
 
