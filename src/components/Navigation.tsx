@@ -19,12 +19,7 @@ export function Topbar(props: NavigationProps) {
     <div>
       <div className='fixed md:hidden w-full top-0 inset-x-0 h-20 shadow-md z-30 bg-slate-300'>
         <div className='flex justify-between items-center w-full h-full px-2'>
-          <Image
-            src='/spongebob.png'
-            alt='Amin Hassani'
-            width={50}
-            height={50}
-          />
+          <h2>Amin Hassani</h2>
           <div className='px-4 cursor-pointer hover:scale-125'>
             <FiMenu size={30} onClick={props.toggle} />
           </div>
