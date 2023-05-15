@@ -31,6 +31,9 @@ export default function ImpossibleList() {
               <ImpossibleItem>Buy a small airplane</ImpossibleItem>
               <ImpossibleItem>Buy a blue-water sailing board</ImpossibleItem>
               <ImpossibleItem>Build a video that goes viral</ImpossibleItem>
+              <ImpossibleItem>
+                Make it into the Guinness world record
+              </ImpossibleItem>
             </ImpossibleGroup>
 
             <ImpossibleGroup title='Entrepreneurship'>
@@ -42,6 +45,7 @@ export default function ImpossibleList() {
               <ImpossibleItem>Build a 1 billion dollar company</ImpossibleItem>
               <ImpossibleItem>Write a book</ImpossibleItem>
             </ImpossibleGroup>
+
             <ImpossibleGroup title='Fitness'>
               <ImpossibleItem completion='Now running only in barefoot sandals'>
                 Become a barefoot runner
@@ -62,6 +66,7 @@ export default function ImpossibleList() {
               <ImpossibleItem>Complete a triathlon</ImpossibleItem>
               <ImpossibleItem>Climb a tall tree</ImpossibleItem>
             </ImpossibleGroup>
+
             <ImpossibleGroup title='Learning'>
               <ImpossibleItem>Learn to play piano</ImpossibleItem>
               <ImpossibleItem>
@@ -78,6 +83,7 @@ export default function ImpossibleList() {
                 Learn to fly a plan and get pilot license
               </ImpossibleItem>
             </ImpossibleGroup>
+
             <ImpossibleGroup title='Language'>
               <ImpossibleItem completion='Mother tongue'>Farsi</ImpossibleItem>
               <ImpossibleItem completion='Duh!'>English</ImpossibleItem>
@@ -86,6 +92,7 @@ export default function ImpossibleList() {
               <ImpossibleItem>Korean</ImpossibleItem>
               <ImpossibleItem>Japanese</ImpossibleItem>
             </ImpossibleGroup>
+
             <ImpossibleGroup title='Travel'>
               <ImpossibleItem>Cross the Sahara Desert</ImpossibleItem>
               <ImpossibleItem>Visit every continent</ImpossibleItem>
@@ -104,8 +111,10 @@ export default function ImpossibleList() {
               <ImpossibleItem>Visit 50 countries</ImpossibleItem>
               <ImpossibleItem>Visit 100 countries</ImpossibleItem>
             </ImpossibleGroup>
+
             <ImpossibleGroup title='Adrenaline Rush'>
               <ImpossibleItem>Go skydiving</ImpossibleItem>
+              <ImpossibleItem>Do paragliding</ImpossibleItem>
             </ImpossibleGroup>
 
             <ImpossibleGroup title='Events to attend'>
