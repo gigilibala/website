@@ -42,7 +42,7 @@ export function Navbar(props: NavigationProps) {
         }`}
       >
         <div className='flex flex-col justify-between items-center w-full p-10 text-white'>
-          <div className='px-4 cursor-pointer hover:scale-125 self-end'>
+          <div className='md:hidden px-4 cursor-pointer hover:scale-125 self-end'>
             <AiOutlineCloseCircle size={30} onClick={props.toggle} />
           </div>
           <div className='p-5 text-3xl font-bold arial'>Amin Hassani</div>
