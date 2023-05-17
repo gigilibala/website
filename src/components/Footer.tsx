@@ -7,13 +7,15 @@ export default function Footer() {
   return (
     <div className='flex flex-col justify-center items-center'>
       <hr className='w-[80%] my-7' />
-      <p>{`${copyright} ${year} ${NAME}`}</p>
       <p>
         Powered by{' '}
         <ExLink href={'https://github.com/gigilibala/personal-website'}>
           GitHub
         </ExLink>{' '}
         and <ExLink href={'https://firebase.google.com/'}>Firebase</ExLink>
+      </p>
+      <p className='capitalize'>
+        {`${copyright} ${year} ${NAME}`}. All rights reserved.
       </p>
     </div>
   )
