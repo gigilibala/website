@@ -37,14 +37,14 @@
   hr {
     @apply my-2 border-0 border-t-2 border-amber-600;
   }
-
-  a {
-    @apply hover:underline text-blue-600 hover:text-blue-800 visited:text-purple-600;
-  }
 }
 
 @layer utilities {
   .devicon {
     @apply w-20 h-20;
+  }
+
+  .link {
+    @apply text-blue-600 hover:underline hover:text-blue-800;
   }
 }

@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Topbar show={showSideBar} toggle={toggle} />
       <div className='flex py-20'>
         <DummyNavBar />
-        <div className='flex-1 flex flex-col'>
+        <div className='flex-1 flex flex-col items-center'>
           <Component {...pageProps} />
           <Footer />
         </div>

@@ -3,7 +3,7 @@ import { PropsWithChildren } from 'react'
 
 export default function ImpossibleList() {
   return (
-    <div className='px-10 py-10'>
+    <div className='px-10 py-10 max-w-3xl'>
       <div className='space-y-10'>
         <h1 className='capitalize'>Impossible list</h1>
         <hr />
@@ -12,7 +12,7 @@ export default function ImpossibleList() {
           <p className='block'>
             <Link
               href={'https://impossiblehq.com/impossible-list'}
-              target='blank'
+              className='link'
             >
               <span>Impossible list </span>
             </Link>{' '}
@@ -87,7 +87,9 @@ export default function ImpossibleList() {
             <ImpossibleGroup title='Language'>
               <ImpossibleItem completion='Mother tongue'>Farsi</ImpossibleItem>
               <ImpossibleItem completion='Duh!'>English</ImpossibleItem>
-              <ImpossibleItem>Mandarin Chinese</ImpossibleItem>
+              <ImpossibleItem>
+                Mandarin Chinese (800 characters in!)
+              </ImpossibleItem>
               <ImpossibleItem>Spanish</ImpossibleItem>
               <ImpossibleItem>Korean</ImpossibleItem>
               <ImpossibleItem>Japanese</ImpossibleItem>
@@ -160,7 +162,9 @@ function ImpossibleItem(props: PropsWithChildren<ImpossibleItemProps>) {
         <span className='pl-1'>
           (
           {props.url ? (
-            <Link href={props.url}>{props.completion}</Link>
+            <Link href={props.url} className='link'>
+              {props.completion}
+            </Link>
           ) : (
             props.completion
           )}

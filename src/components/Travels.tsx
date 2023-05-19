@@ -1,6 +1,6 @@
 export default function Travels() {
   return (
-    <>
+    <div className='max-w-3xl'>
       <div>
         <h1 className='p-4 text-center capitalize'>Countries I have visited</h1>
         <iframe
@@ -15,6 +15,6 @@ export default function Travels() {
           className='w-full h-72 md:h-96'
         />
       </div>
-    </>
+    </div>
   )
 }

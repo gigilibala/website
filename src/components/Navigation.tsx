@@ -1,3 +1,4 @@
+import { NAME } from '@/misc/constants'
 import Image from 'next/image'
 import Link from 'next/link'
 import {
@@ -19,7 +20,9 @@ export function Topbar(props: NavigationProps) {
     <div>
       <div className='fixed md:hidden w-full top-0 inset-x-0 h-20 shadow-md z-30 bg-slate-300'>
         <div className='flex justify-between items-center w-full h-full px-2'>
-          <h2>Amin Hassani</h2>
+          <h2 className='px-5'>
+            <Link href={'/'}>{NAME}</Link>
+          </h2>
           <div className='px-4 cursor-pointer hover:scale-125'>
             <FiMenu size={30} onClick={props.toggle} />
           </div>
@@ -45,14 +48,15 @@ export function Navbar(props: NavigationProps) {
           <div className='md:hidden px-4 cursor-pointer hover:scale-125 self-end'>
             <AiOutlineCloseCircle size={30} onClick={props.toggle} />
           </div>
-          <div className='p-5 text-3xl font-bold arial'>Amin Hassani</div>
+          <div className='p-5 text-3xl font-bold'>{NAME}</div>
           <div className='p3'>
             <Link href='/' onClick={props.toggle}>
               <Image
-                src='/spongebob.png'
+                src='/me.jpeg'
                 alt='Amin Hassani'
                 width={200}
                 height={200}
+                className='rounded-full'
               />
             </Link>
           </div>
