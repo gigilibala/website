@@ -1,13 +1,7 @@
 import { NAME } from '@/misc/constants'
 import Image from 'next/image'
 import Link from 'next/link'
-import {
-  AiFillInstagram,
-  AiFillLinkedin,
-  AiFillTwitterCircle,
-  AiOutlineCloseCircle,
-  AiOutlineGithub,
-} from 'react-icons/ai'
+import { AiOutlineCloseCircle, AiOutlineGithub } from 'react-icons/ai'
 import { FiMenu } from 'react-icons/fi'
 
 export type NavigationProps = {
@@ -35,8 +29,7 @@ export function Topbar(props: NavigationProps) {
 export function Navbar(props: NavigationProps) {
   const navClassName =
     'block p-2 rounded transition duration-100 hover:text-orange-400 hover:scale-105 text-white visited:text-white'
-  const socialMediaClassName =
-    'hover:fill-orange-400 hover:scale-150 fill-white'
+  const socialMediaClassName = 'hover:scale-125'
   return (
     <div>
       <aside
@@ -115,15 +108,21 @@ export function Navbar(props: NavigationProps) {
               href={'https://www.linkedin.com/in/aminhassani'}
               target='_blank'
             >
-              <AiFillLinkedin
-                size={40}
+              <Image
+                src={'linkedin.svg'}
+                alt={'linkedin'}
+                width={40}
+                height={40}
                 className={socialMediaClassName}
                 onClick={props.toggle}
               />
             </Link>
             <Link href={'https://twitter.com/gigilibala'} target='_blank'>
-              <AiFillTwitterCircle
-                size={40}
+              <Image
+                src={'twitter.svg'}
+                alt={'twitter'}
+                width={40}
+                height={40}
                 className={socialMediaClassName}
                 onClick={props.toggle}
               />
@@ -132,8 +131,11 @@ export function Navbar(props: NavigationProps) {
               href={'https://www.instagram.com/gigilibala4/'}
               target='_blank'
             >
-              <AiFillInstagram
-                size={40}
+              <Image
+                src={'instagram.svg'}
+                alt={'instagram'}
+                width={40}
+                height={40}
                 className={socialMediaClassName}
                 onClick={props.toggle}
               />
