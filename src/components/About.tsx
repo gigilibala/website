@@ -4,7 +4,7 @@ import { Tooltip } from 'react-tooltip'
 
 export default function About() {
   return (
-    <div className='px-10 py-10 max-w-3xl'>
+    <div className='p-10 max-w-3xl'>
       <div className='space-y-10'>
         <h1 className='capitalize'>About me!</h1>
         <hr />
