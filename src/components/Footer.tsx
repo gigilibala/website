@@ -1,5 +1,5 @@
-import ExLink from '@/components/ExLink'
 import { NAME } from '@/misc/constants'
+import Link from 'next/link'
 
 export default function Footer() {
   const copyright = String.fromCodePoint(0x00a9)
@@ -9,10 +9,21 @@ export default function Footer() {
       <hr className='w-[80%] my-7' />
       <p>
         Powered by{' '}
-        <ExLink href={'https://github.com/gigilibala/personal-website'}>
+        <Link
+          href={'https://github.com/gigilibala/personal-website'}
+          target='blank'
+          className='link'
+        >
           GitHub
-        </ExLink>{' '}
-        and <ExLink href={'https://firebase.google.com/'}>Firebase</ExLink>
+        </Link>{' '}
+        and{' '}
+        <Link
+          href={'https://firebase.google.com/'}
+          target='blank'
+          className='link'
+        >
+          Firebase
+        </Link>
       </p>
       <p className='capitalize'>
         {`${copyright} ${year} ${NAME}`}. All rights reserved.
