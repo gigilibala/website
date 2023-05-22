@@ -9,17 +9,21 @@ export default function About() {
         <h1 className='capitalize'>About me!</h1>
         <hr />
 
-        <div className='text-justify first-letter:text-5xl space-y-10'>
+        <div className='first-letter:text-5xl space-y-10'>
           <p>
-            Hi there, I'm a software engineer with expertise in building and
-            leading a variety of software products and teams. I have deep
-            knowledge of Linux/Unix based operating systems, security,
-            large-scale message passing systems, cloud and distributed systems,
-            and robotics. I also have full-stack web and mobile development
-            experience. I've worked on diverse projects, including large-scale
-            distributed systems and clouds, as well as operating system and
-            kernel development. I have a passion for building innovative
-            products and am always eager to learn about new technologies.
+            Hi there! I'm a software engineer with expertise in building and
+            leading a variety of software products and teams. Outside of work, I
+            am an avid fan of running, hiking, and traveling.
+          </p>
+          <p>
+            I have deep knowledge of Linux/Unix based operating systems,
+            security, large-scale message passing systems, cloud and distributed
+            systems, and robotics. I also have full-stack web and mobile
+            development experience. I've worked on diverse projects, including
+            large-scale distributed systems and clouds, as well as operating
+            system and kernel development. I have a passion for building
+            innovative products and am always eager to learn about new
+            technologies.
           </p>
 
           <p>

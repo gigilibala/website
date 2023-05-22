@@ -12,7 +12,7 @@ export type NavigationProps = {
 export function Topbar(props: NavigationProps) {
   return (
     <div>
-      <div className='fixed md:hidden w-full top-0 inset-x-0 h-20 shadow-md z-30 bg-slate-300'>
+      <div className='fixed md:hidden w-full top-0 inset-x-0 h-20 shadow-lg z-30 bg-slate-200'>
         <div className='flex justify-between items-center w-full h-full px-2'>
           <h2 className='px-5'>
             <Link href={'/'}>{NAME}</Link>
@@ -33,7 +33,7 @@ export function Navbar(props: NavigationProps) {
   return (
     <div>
       <aside
-        className={`fixed md:visible inset-y-0 left-0 z-40 w-80 bg-gray-600 ${
+        className={`fixed md:visible inset-y-0 left-0 z-40 w-80 bg-green-950 ${
           props.show ? '' : 'invisible'
         }`}
       >
