@@ -42,7 +42,11 @@ export default function About() {
               Nuro
             </Link>{' '}
             on a variety of open source and closed source projects. Please refer
-            to my <Link href={'/resume'}> resume </Link>
+            to my{' '}
+            <Link href={'/resume'} className='link'>
+              {' '}
+              resume{' '}
+            </Link>
             below for a full list of my experience and skills, including my
             open-source projects.
           </p>

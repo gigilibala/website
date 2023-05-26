@@ -8,13 +8,13 @@ export default function ImpossibleList() {
         <h1 className='capitalize'>Impossible list</h1>
         <hr />
 
-        <div className='text-justify first-letter:text-5xl space-y-10'>
+        <div className='first-letter:text-5xl space-y-10'>
           <p className='block'>
             <Link
               href={'https://impossiblehq.com/impossible-list'}
               className='link'
             >
-              <span>Impossible list </span>
+              Impossible list
             </Link>{' '}
             is a set of goals that are more than just a bucket list. They are
             goals that are so big that you are not sure if you can achieve them.
@@ -30,7 +30,7 @@ export default function ImpossibleList() {
               <ImpossibleItem>Obtain a 3rd passport</ImpossibleItem>
               <ImpossibleItem>Buy a small airplane</ImpossibleItem>
               <ImpossibleItem>Buy a blue-water sailing board</ImpossibleItem>
-              <ImpossibleItem>Build a video that goes viral</ImpossibleItem>
+              <ImpossibleItem>Make a video that goes viral</ImpossibleItem>
               <ImpossibleItem>
                 Make it into the Guinness world record
               </ImpossibleItem>
@@ -59,10 +59,9 @@ export default function ImpossibleList() {
               <ImpossibleItem>Run a 50 miles ultra-marathon</ImpossibleItem>
               <ImpossibleItem>Run a 100 miles ultra-marathon</ImpossibleItem>
               <ImpossibleItem>Run a 200 miles ultra-marathon</ImpossibleItem>
-              <ImpossibleItem>Do 20 consecutive pullup</ImpossibleItem>
-              <ImpossibleItem>Do 50 consecutive pullup</ImpossibleItem>
-              <ImpossibleItem>Do 100 consecutive pushup</ImpossibleItem>
-              <ImpossibleItem>Complete a Spartan Race</ImpossibleItem>
+              <ImpossibleItem>Do 20 consecutive pull-up</ImpossibleItem>
+              <ImpossibleItem>Do 50 consecutive push-up</ImpossibleItem>
+              <ImpossibleItem>Complete a Spartan race</ImpossibleItem>
               <ImpossibleItem>Complete a triathlon</ImpossibleItem>
               <ImpossibleItem>Climb a tall tree</ImpossibleItem>
             </ImpossibleGroup>
@@ -77,14 +76,14 @@ export default function ImpossibleList() {
                 Learn scuba diving and get certificate
               </ImpossibleItem>
               <ImpossibleItem>Learn surfing</ImpossibleItem>
-              <ImpossibleItem>Learn Skiing</ImpossibleItem>
+              <ImpossibleItem>Learn skiing</ImpossibleItem>
               <ImpossibleItem>Learn sailing in the ocean</ImpossibleItem>
               <ImpossibleItem>
                 Learn to fly a plan and get pilot license
               </ImpossibleItem>
             </ImpossibleGroup>
 
-            <ImpossibleGroup title='Language'>
+            <ImpossibleGroup title='Languages'>
               <ImpossibleItem completion='Mother tongue'>Farsi</ImpossibleItem>
               <ImpossibleItem completion='Duh!'>English</ImpossibleItem>
               <ImpossibleItem>
@@ -108,10 +107,8 @@ export default function ImpossibleList() {
               <ImpossibleItem>
                 Live on a beach for at least 3 months
               </ImpossibleItem>
-              <ImpossibleItem>Visit all 50 states</ImpossibleItem>
               <ImpossibleItem>Visit 20 countries</ImpossibleItem>
-              <ImpossibleItem>Visit 50 countries</ImpossibleItem>
-              <ImpossibleItem>Visit 100 countries</ImpossibleItem>
+              <ImpossibleItem>Visit all 50 states</ImpossibleItem>
             </ImpossibleGroup>
 
             <ImpossibleGroup title='Adrenaline Rush'>
@@ -121,7 +118,7 @@ export default function ImpossibleList() {
 
             <ImpossibleGroup title='Events to attend'>
               <ImpossibleItem>Olympics</ImpossibleItem>
-              <ImpossibleItem>world cup</ImpossibleItem>
+              <ImpossibleItem>World Cup</ImpossibleItem>
               <ImpossibleItem>Burning man</ImpossibleItem>
               <ImpossibleItem>Mardi Gras</ImpossibleItem>
             </ImpossibleGroup>
