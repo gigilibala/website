@@ -68,13 +68,6 @@ export function Navbar(props: NavigationProps) {
               Impossible List
             </Link>
             <Link
-              href='/learning'
-              className={navClassName}
-              onClick={props.toggle}
-            >
-              Learning
-            </Link>
-            <Link
               href='/projects'
               className={navClassName}
               onClick={props.toggle}
