@@ -15,14 +15,18 @@ export default function Footer() {
           className='link'
         >
           GitHub
-        </Link>{' '}
-        and{' '}
+        </Link>
+        ,{' '}
         <Link
           href={'https://firebase.google.com/'}
           target='blank'
           className='link'
         >
           Firebase
+        </Link>
+        , and{' '}
+        <Link href={'https://nextjs.org/'} target='blank' className='link'>
+          Next.js
         </Link>
       </p>
       <p className='capitalize'>
