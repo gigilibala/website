@@ -9,11 +9,11 @@ export default function About() {
         <h1 className='capitalize'>About me!</h1>
         <hr />
 
-        <div className='first-letter:text-5xl space-y-10'>
+        <div className='space-y-10'>
           <p>
-            Hi there! I'm a software engineer with expertise in building and
-            leading a variety of software products and teams. Outside of work, I
-            am an avid fan of running, hiking, and traveling.
+            I'm a software engineer with expertise in building and leading a
+            variety of software products and teams. Outside of work, I am an
+            avid fan of running, hiking, and traveling.
           </p>
           <p>
             I have deep knowledge of Linux/Unix based operating systems,

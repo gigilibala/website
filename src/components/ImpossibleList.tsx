@@ -8,7 +8,7 @@ export default function ImpossibleList() {
         <h1 className='capitalize'>Impossible list</h1>
         <hr />
 
-        <div className='first-letter:text-5xl space-y-10'>
+        <div className='space-y-10'>
           <p className='block'>
             <Link
               href={'https://impossiblehq.com/impossible-list'}
@@ -26,7 +26,9 @@ export default function ImpossibleList() {
           <div>
             <ImpossibleGroup title='Life'>
               <ImpossibleItem completion='Aug 2010'>Come to US</ImpossibleItem>
-              <ImpossibleItem>Obtain US citizenship</ImpossibleItem>
+              <ImpossibleItem completion='Nov 2023'>
+                Obtain US citizenship
+              </ImpossibleItem>
               <ImpossibleItem>Obtain a 3rd passport</ImpossibleItem>
               <ImpossibleItem>Buy a small airplane</ImpossibleItem>
               <ImpossibleItem>Buy a blue-water sailing board</ImpossibleItem>
@@ -39,10 +41,6 @@ export default function ImpossibleList() {
             <ImpossibleGroup title='Entrepreneurship'>
               <ImpossibleItem>Build a SaaS product and sell it</ImpossibleItem>
               <ImpossibleItem>Build a 10 million dollar company</ImpossibleItem>
-              <ImpossibleItem>
-                Build a 100 million dollar company
-              </ImpossibleItem>
-              <ImpossibleItem>Build a 1 billion dollar company</ImpossibleItem>
               <ImpossibleItem>Write a book</ImpossibleItem>
             </ImpossibleGroup>
 
@@ -50,36 +48,38 @@ export default function ImpossibleList() {
               <ImpossibleItem completion='Now running only in barefoot sandals'>
                 Become a barefoot runner
               </ImpossibleItem>
-              <ImpossibleItem>Run a 5k</ImpossibleItem>
               <ImpossibleItem completion='Sun, Jul 24, 2022'>
                 Run a half marathon
               </ImpossibleItem>
               <ImpossibleItem>Run a marathon</ImpossibleItem>
-              <ImpossibleItem>Run a 50k ultra-marathon</ImpossibleItem>
               <ImpossibleItem>Run a 50 miles ultra-marathon</ImpossibleItem>
-              <ImpossibleItem>Run a 100 miles ultra-marathon</ImpossibleItem>
-              <ImpossibleItem>Run a 200 miles ultra-marathon</ImpossibleItem>
-              <ImpossibleItem>Do 20 consecutive pull-up</ImpossibleItem>
-              <ImpossibleItem>Do 50 consecutive push-up</ImpossibleItem>
+              <ImpossibleItem>
+                Do <s>10</s>, 20 consecutive pull-up
+              </ImpossibleItem>
+              <ImpossibleItem>
+                Do <s>20</s>, 40 consecutive push-up
+              </ImpossibleItem>
               <ImpossibleItem>Complete a Spartan race</ImpossibleItem>
               <ImpossibleItem>Complete a triathlon</ImpossibleItem>
               <ImpossibleItem>Climb a tall tree</ImpossibleItem>
+              <ImpossibleItem>
+                Climb a coconut tree and bring down fresh coconut
+              </ImpossibleItem>
             </ImpossibleGroup>
 
             <ImpossibleGroup title='Learning'>
-              <ImpossibleItem>Learn to play piano</ImpossibleItem>
               <ImpossibleItem>
-                Learn to play beethoven's "Moonlight Sonata" on piano{' '}
+                Learn to play piano and play Beethoven's "Moonlight Sonata"
               </ImpossibleItem>
               <ImpossibleItem>Learn to play Violin</ImpossibleItem>
               <ImpossibleItem>
-                Learn scuba diving and get certificate
+                Learn scuba diving and get my diving certificate
               </ImpossibleItem>
               <ImpossibleItem>Learn surfing</ImpossibleItem>
               <ImpossibleItem>Learn skiing</ImpossibleItem>
               <ImpossibleItem>Learn sailing in the ocean</ImpossibleItem>
               <ImpossibleItem>
-                Learn to fly a plan and get pilot license
+                Learn to fly a plane and get pilot license
               </ImpossibleItem>
             </ImpossibleGroup>
 
@@ -87,19 +87,25 @@ export default function ImpossibleList() {
               <ImpossibleItem completion='Mother tongue'>Farsi</ImpossibleItem>
               <ImpossibleItem completion='Duh!'>English</ImpossibleItem>
               <ImpossibleItem>
-                Mandarin Chinese (800 characters in!)
+                Mandarin Chinese (in progress, 3000 characters in and basic
+                elementary conversations!)
               </ImpossibleItem>
               <ImpossibleItem>Spanish</ImpossibleItem>
+              <ImpossibleItem>Turkish</ImpossibleItem>
               <ImpossibleItem>Korean</ImpossibleItem>
               <ImpossibleItem>Japanese</ImpossibleItem>
             </ImpossibleGroup>
 
             <ImpossibleGroup title='Travel'>
-              <ImpossibleItem>Cross the Sahara Desert</ImpossibleItem>
               <ImpossibleItem>Visit every continent</ImpossibleItem>
+              <ImpossibleItem>Visit 20 countries</ImpossibleItem>
+              <ImpossibleItem>Visit all 50 states</ImpossibleItem>
+              <ImpossibleItem>Cross the Sahara Desert</ImpossibleItem>
               <ImpossibleItem>Go on a safari</ImpossibleItem>
               <ImpossibleItem>See the northern light</ImpossibleItem>
-              <ImpossibleItem>Visit the Great Wall of China</ImpossibleItem>
+              <ImpossibleItem completion='Aug 2023'>
+                Visit the Great Wall of China
+              </ImpossibleItem>
               <ImpossibleItem>See the Taj Mahal</ImpossibleItem>
               <ImpossibleItem>
                 Hike the Inca Trail to Machu Picchu
@@ -107,8 +113,6 @@ export default function ImpossibleList() {
               <ImpossibleItem>
                 Live on a beach for at least 3 months
               </ImpossibleItem>
-              <ImpossibleItem>Visit 20 countries</ImpossibleItem>
-              <ImpossibleItem>Visit all 50 states</ImpossibleItem>
             </ImpossibleGroup>
 
             <ImpossibleGroup title='Adrenaline Rush'>

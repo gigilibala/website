@@ -1,11 +1,11 @@
+import Home from '@/components/Home'
 import PageHead from '@/components/PageHead'
-import About from './about'
 
 export default () => {
   return (
     <main>
       <PageHead />
-      <About />
+      <Home />
     </main>
   )
 }
