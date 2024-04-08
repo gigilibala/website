@@ -86,3 +86,6 @@ node_modules/
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# For secrets
+firebase.config.ts
