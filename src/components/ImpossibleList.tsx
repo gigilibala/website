@@ -81,7 +81,9 @@ export default function ImpossibleList() {
               <ImpossibleItem>
                 Learn to fly a plane and get pilot license
               </ImpossibleItem>
-              <ImpossibleItem>Get PADI open water diver certificate</ImpossibleItem>
+              <ImpossibleItem>
+                Get PADI open water diver certificate
+              </ImpossibleItem>
             </ImpossibleGroup>
 
             <ImpossibleGroup title='Languages'>
