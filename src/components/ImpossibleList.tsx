@@ -72,7 +72,7 @@ export default function ImpossibleList() {
                 Learn to play piano and play Beethoven's "Moonlight Sonata"
               </ImpossibleItem>
               <ImpossibleItem>Learn to play Violin</ImpossibleItem>
-              <ImpossibleItem>
+              <ImpossibleItem completion='Jul 2024'>
                 Learn scuba diving and get my diving certificate
               </ImpossibleItem>
               <ImpossibleItem>Learn surfing</ImpossibleItem>
