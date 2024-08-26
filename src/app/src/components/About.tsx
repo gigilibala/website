@@ -1,4 +1,6 @@
-import { SvgCollection } from '@misc/constants'
+'use client'
+
+import { SvgCollection } from '@app/src/misc/constants'
 import Link from 'next/link'
 import { Tooltip } from 'react-tooltip'
 
@@ -41,14 +43,7 @@ export default function About() {
             <Link href={'https://www.nuro.ai'} target='blank' className='link'>
               Nuro
             </Link>{' '}
-            on a variety of open source and closed source projects. Please refer
-            to my{' '}
-            <Link href={'/resume'} className='link'>
-              {' '}
-              resume{' '}
-            </Link>
-            below for a full list of my experience and skills, including my
-            open-source projects.
+            on a variety of open source and closed source projects.
           </p>
         </div>
 

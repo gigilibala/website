@@ -1,4 +1,4 @@
-import { NAME } from '@misc/constants'
+import { NAME } from '@app/src/misc/constants'
 import Image from 'next/image'
 import Link from 'next/link'
 import { AiOutlineCloseCircle, AiOutlineGithub } from 'react-icons/ai'
@@ -73,13 +73,6 @@ export function Navbar(props: NavigationProps) {
               onClick={props.toggle}
             >
               Projects
-            </Link>
-            <Link
-              href='/resume'
-              className={navClassName}
-              onClick={props.toggle}
-            >
-              Resume
             </Link>
             <Link
               href='/travels'
