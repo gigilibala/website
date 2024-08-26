@@ -1,4 +1,4 @@
-import { NAME } from '@misc/constants'
+import { NAME } from '@app/src/misc/constants'
 import Link from 'next/link'
 
 export default function Footer() {
