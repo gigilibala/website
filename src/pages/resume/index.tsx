@@ -1,5 +1,5 @@
-import PageHead from '@/components/PageHead'
-import Resume from '@/components/Resume'
+import PageHead from '@components/PageHead'
+import Resume from '@components/Resume'
 
 export default () => {
   return (

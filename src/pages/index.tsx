@@ -1,5 +1,5 @@
-import Home from '@/components/Home'
-import PageHead from '@/components/PageHead'
+import Home from '@components/Home'
+import PageHead from '@components/PageHead'
 import { initializeApp } from 'firebase/app'
 import { firebaseConfig } from '../../firebase.config'
 

@@ -1,5 +1,5 @@
-import PageHead from '@/components/PageHead'
-import Travels from '@/components/Travels'
+import PageHead from '@components/PageHead'
+import Travels from '@components/Travels'
 
 export default () => {
   return (
