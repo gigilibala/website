@@ -1,4 +1,4 @@
-import { NAME } from '@/misc/constants'
+import { NAME } from '@misc/constants'
 import Image from 'next/image'
 import Link from 'next/link'
 import { AiOutlineCloseCircle, AiOutlineGithub } from 'react-icons/ai'

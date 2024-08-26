@@ -1,6 +1,6 @@
-import Footer from '@/components/Footer'
-import { DummyNavBar, Navbar, Topbar } from '@/components/Navigation'
-import '@/styles/globals.css'
+import Footer from '@components/Footer'
+import { DummyNavBar, Navbar, Topbar } from '@components/Navigation'
+import '@styles/globals.css'
 import type { AppProps } from 'next/app'
 import { useState } from 'react'
 

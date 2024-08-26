@@ -1,4 +1,4 @@
-import { SvgCollection } from '@/misc/constants'
+import { SvgCollection } from '@misc/constants'
 import Link from 'next/link'
 import { Tooltip } from 'react-tooltip'
 
