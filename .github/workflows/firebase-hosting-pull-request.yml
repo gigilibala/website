@@ -27,6 +27,7 @@ jobs:
           FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
         run: |
           printf "$FIREBASE_CONFIG" | base64 -d > firebase.config.ts
+          test -f firebase.config.ts
 
       - name: Lint Check
         run: yarn lint:check
