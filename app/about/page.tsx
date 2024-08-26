@@ -1,5 +1,5 @@
 import About from '@src/components/About'
 
-export default () => {
+export default function Page() {
   return <About />
 }

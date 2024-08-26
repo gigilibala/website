@@ -1,17 +1,17 @@
 {
   "license": "MIT",
   "name": "website",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start:next": "next start",
     "start:out": "serve out",
-    "lint:check": "prettier --check .",
+    "lint:check": "prettier --check .; yarn lint",
     "lint:fix": "prettier --write .",
     "deploy": "firebase deploy",
-    "lint": "next lint"
+    "lint": "next lint --max-warnings 0"
   },
   "devDependencies": {
     "@types/node": "^20",

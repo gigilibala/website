@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { Tooltip } from 'react-tooltip'
 import { SvgCollection } from '../misc/constants'
@@ -53,12 +54,15 @@ export default function About() {
           <div className='flex flex-wrap mt-10'>
             {Object.entries(SvgCollection).map(([key, value]) => (
               <div key={key}>
-                <img
+                <Image
                   src={value}
+                  width={50}
+                  height={50}
                   className='devicon'
                   data-tooltip-content={key}
                   data-tooltip-id={key}
                   data-tooltip-float={true}
+                  alt={key}
                 />
                 <Tooltip id={key} className='capitalize' />
               </div>

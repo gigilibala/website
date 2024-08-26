@@ -1,5 +1,5 @@
 import ImpossibleList from '@src/components/ImpossibleList'
 
-export default () => {
+export default function Page() {
   return <ImpossibleList />
 }
