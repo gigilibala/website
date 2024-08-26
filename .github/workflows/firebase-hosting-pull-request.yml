@@ -14,16 +14,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Install Packages
+        run: yarn --immutable
 
       - name: Setup Config
         env:
           FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
         run: |
           printf "$FIREBASE_CONFIG" | base64 -d > firebase.config.ts
-
-      - name: Install Packages
-        run: yarn install --frozen-lockfile
 
       - name: Lint Check
         run: yarn lint:check

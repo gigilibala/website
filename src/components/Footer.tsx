@@ -10,7 +10,7 @@ export default function Footer() {
       <p>
         Powered by{' '}
         <Link
-          href={'https://github.com/gigilibala/personal-website'}
+          href={'https://github.com/gigilibala/website'}
           target='blank'
           className='link'
         >
