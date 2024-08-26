@@ -1,5 +1,5 @@
-import { NAME } from '@app/src/misc/constants'
 import Link from 'next/link'
+import { NAME } from '../misc/constants'
 
 export default function Footer() {
   const copyright = String.fromCodePoint(0x00a9)

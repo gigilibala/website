@@ -1,8 +1,8 @@
 'use client'
 
-import Footer from '@app/src/components/Footer'
-import { DummyNavBar, Navbar, Topbar } from '@app/src/components/Navigation'
 import { PropsWithChildren, useState } from 'react'
+import Footer from './Footer'
+import { DummyNavBar, Navbar, Topbar } from './Navigation'
 
 export default function Main({ children }: PropsWithChildren) {
   const [showSideBar, setShowSideBar] = useState<boolean>(false)
