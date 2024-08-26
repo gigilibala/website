@@ -1,8 +1,8 @@
-import { NAME } from '@app/src/misc/constants'
 import Image from 'next/image'
 import Link from 'next/link'
 import { AiOutlineCloseCircle, AiOutlineGithub } from 'react-icons/ai'
 import { FiMenu } from 'react-icons/fi'
+import { NAME } from '../misc/constants'
 
 export type NavigationProps = {
   show: boolean

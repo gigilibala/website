@@ -1,8 +1,8 @@
 'use client'
 
-import { SvgCollection } from '@app/src/misc/constants'
 import Link from 'next/link'
 import { Tooltip } from 'react-tooltip'
+import { SvgCollection } from '../misc/constants'
 
 export default function About() {
   return (
