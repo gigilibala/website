@@ -32,6 +32,7 @@ export default function Footer() {
       <p className='capitalize'>
         {`${copyright} ${year} ${NAME}`}. All rights reserved.
       </p>
+      <p>Version: {process.env.APP_VERSION}</p>
     </div>
   )
 }

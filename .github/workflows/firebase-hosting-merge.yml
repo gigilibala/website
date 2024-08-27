@@ -4,9 +4,7 @@
 name: Deploy to Firebase Hosting on merge
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   build_and_deploy:
@@ -30,10 +28,14 @@ jobs:
       - name: Lint Check
         run: yarn lint:check
 
-      - name: Build Website
-        run: yarn build
+      - name: Build Website with Semantic Release
+        uses: cycjimmy/semantic-release-action@v4
+        id: semantic
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
+        if: steps.semantic.outputs.new_release_published == 'true'
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PERSONAL_WEBSITE_C9EAF }}'
