@@ -2,7 +2,7 @@ import packageJson from './package.json' with { type: 'json' }
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   output: 'export',
   images: {
     unoptimized: true,

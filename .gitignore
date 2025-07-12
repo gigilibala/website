@@ -89,4 +89,6 @@ node_modules/
 next-env.d.ts
 
 # For secrets
-firebase.config.ts
+/app/firebase.config.ts
+
+.pnp.*
