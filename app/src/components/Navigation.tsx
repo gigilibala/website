@@ -45,7 +45,7 @@ export function Navbar(props: NavigationProps) {
           <div className='p3'>
             <Link href='/' onClick={props.toggle}>
               <Image
-                src='/me.jpeg'
+                src='/me.png'
                 alt='Amin Hassani'
                 width={200}
                 height={200}
