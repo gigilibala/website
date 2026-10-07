@@ -15,6 +15,11 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
       - name: Enable Corepack
         run: corepack enable
 
@@ -25,7 +30,10 @@ jobs:
         env:
           FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
         run: |
-          printf "$FIREBASE_CONFIG" | base64 -d > app/firebase.config.ts
+          # Next.js keeps app code in app/; the Astro site uses src/.
+          dir=src
+          [ -d app ] && dir=app
+          printf "$FIREBASE_CONFIG" | base64 -d > "$dir/firebase.config.ts"
 
       - name: Lint Check
         run: yarn lint:check
