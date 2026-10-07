@@ -1,0 +1,100 @@
+---
+import VisitedMap from '../components/VisitedMap.astro'
+import {
+  HOME_COUNTRY,
+  HOME_STATE,
+  VISITED_COUNTRIES,
+  VISITED_STATES,
+} from '../data/travels'
+import { usMap, worldMap } from '../lib/maps'
+import Base from '../layouts/Base.astro'
+
+const world = worldMap(VISITED_COUNTRIES, HOME_COUNTRY)
+const us = usMap(VISITED_STATES, HOME_STATE)
+
+// DC is on the map but doesn't count toward the 50 states goal.
+const stateCount = VISITED_STATES.filter(
+  (s) => s !== 'District of Columbia',
+).length
+
+const sections = [
+  {
+    title: 'Countries',
+    summary: `${VISITED_COUNTRIES.length} of the 20 countries I want to visit.`,
+    map: world,
+    label: `World map highlighting the ${VISITED_COUNTRIES.length} countries I’ve visited`,
+    places: VISITED_COUNTRIES,
+    home: HOME_COUNTRY,
+    homeLabel: 'Home',
+  },
+  {
+    title: 'US states',
+    summary: `${stateCount} of 50, plus Washington, DC.`,
+    map: us,
+    label: `US map highlighting the ${stateCount} states I’ve been to, plus DC`,
+    places: VISITED_STATES,
+    home: HOME_STATE,
+    homeLabel: 'Home state',
+  },
+]
+---
+
+<Base
+  title='Travels'
+  page='travels'
+  description='Maps of the countries and US states Amin has visited.'
+>
+  <div class='measure'>
+    <h1>Travels</h1>
+    <p class='mt-4'>
+      A running record of where I’ve been. Visiting 20 countries and all 50
+      states are both on my{' '}
+      <a class='link' href='/impossible_list'>
+        impossible list
+      </a>
+      .
+    </p>
+  </div>
+
+  <div class='mt-14 space-y-20'>
+    {sections.map((s) => (
+      <section aria-labelledby={`map-${s.title}`}>
+        <div class='flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2'>
+          <div>
+            <h2 id={`map-${s.title}`}>{s.title}</h2>
+            <p class='text-lichen'>{s.summary}</p>
+          </div>
+          <ul class='flex gap-5 text-sm text-lichen' aria-label='Legend'>
+            <li class='flex items-center gap-2'>
+              <span class='size-3 rounded-sm bg-amber' />
+              {s.homeLabel}
+            </li>
+            <li class='flex items-center gap-2'>
+              <span class='size-3 rounded-sm bg-pine' />
+              Visited
+            </li>
+          </ul>
+        </div>
+
+        <div class='mt-6'>
+          <VisitedMap map={s.map} label={s.label} />
+        </div>
+
+        <ul class='mt-6 flex flex-wrap gap-2 text-sm'>
+          {s.places.map((p) => (
+            <li
+              class:list={[
+                'rounded-full px-3 py-1',
+                p === s.home
+                  ? 'bg-amber text-paper'
+                  : 'bg-surface text-ink ring-1 ring-rule',
+              ]}
+            >
+              {p}
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </div>
+</Base>

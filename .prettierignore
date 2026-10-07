@@ -32,9 +32,11 @@ public/
 # local env files
 .env*.local
 
-# next.js
-.next/
-out/
+# astro
+.astro/
+dist/
+.yarn/
+CHANGELOG.md
 
 # production
 /build

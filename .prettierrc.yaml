@@ -2,3 +2,10 @@ semi: false
 trailingComma: all
 singleQuote: true
 jsxSingleQuote: true
+plugins:
+  - prettier-plugin-astro
+  - prettier-plugin-organize-imports
+overrides:
+  - files: '*.astro'
+    options:
+      parser: astro

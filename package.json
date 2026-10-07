@@ -4,38 +4,44 @@
   "version": "1.0.2",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start:next": "next start",
-    "start:out": "serve out",
-    "lint:check": "prettier --check .; yarn lint",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "lint:check": "prettier --check . && astro check",
     "lint:fix": "prettier --write .",
-    "lint": "next lint --max-warnings 0",
     "deploy": "firebase deploy"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@emnapi/runtime": "1.11.3",
     "@semantic-release/git": "^10.0.1",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.6",
-    "postcss": "^8",
-    "prettier": "^3.3.3",
-    "prettier-plugin-organize-imports": "^4.0.0",
-    "react-devtools": "^6.1.5",
+    "@tailwindcss/typography": "^0.5.20",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/d3-geo": "^3.1.1",
+    "@types/topojson-client": "^3.1.5",
+    "@types/topojson-simplify": "^3.0.3",
+    "@types/topojson-specification": "^1.0.5",
+    "prettier": "^3.9.9",
+    "prettier-plugin-astro": "^1.1.0",
+    "prettier-plugin-organize-imports": "^4.3.0",
     "semantic-release": "^24",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6"
   },
   "dependencies": {
-    "autoprefixer": "10.4.16",
-    "firebase": "^11.10.0",
-    "next": "14.2.6",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-icons": "^4.8.0",
-    "react-tooltip": "^5.11.2"
+    "@fontsource-variable/bricolage-grotesque": "^5.3.0",
+    "@fontsource-variable/karla": "^5.3.0",
+    "@iconify-json/lucide": "^1.2.140",
+    "@iconify-json/simple-icons": "^1.2.99",
+    "astro": "^7.3.6",
+    "astro-icon": "^1.2.0",
+    "d3-geo": "^3.1.1",
+    "firebase": "^12.19.0",
+    "topojson-client": "^3.1.0",
+    "topojson-simplify": "^3.0.3",
+    "us-atlas": "^3.0.1",
+    "world-atlas": "^2.0.2"
   },
   "release": {
     "branches": [
@@ -57,5 +63,6 @@
       ]
     ]
   },
-  "packageManager": "yarn@4.4.1"
+  "packageManager": "yarn@4.4.1",
+  "type": "module"
 }
