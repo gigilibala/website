@@ -33,7 +33,10 @@ jobs:
         env:
           FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
         run: |
-          printf "$FIREBASE_CONFIG" | base64 -d > src/firebase.config.ts
+          # Next.js keeps app code in app/; the Astro site uses src/.
+          dir=src
+          [ -d app ] && dir=app
+          printf "$FIREBASE_CONFIG" | base64 -d > "$dir/firebase.config.ts"
 
       - name: Lint Check
         run: yarn lint:check
