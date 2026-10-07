@@ -1,0 +1,98 @@
+---
+import { Image } from 'astro:assets'
+import me from '../assets/me.png'
+import { EDUCATION, EXPERIENCE, yearSpan } from '../data/resume'
+import Base from '../layouts/Base.astro'
+
+// The three latest full-time roles; the full history lives on /experience.
+const recent = EXPERIENCE.filter((r) => !/intern/i.test(r.title))
+  .slice(0, 3)
+  .map((r) => ({
+    where: r.company,
+    what: r.title,
+    when: yearSpan(r.start, r.end),
+  }))
+const phd = EDUCATION[0]!
+recent.push({
+  where: phd.school,
+  what: phd.degree,
+  when: yearSpan(phd.start, phd.end),
+})
+---
+
+<Base page='home'>
+  <section
+    class='grid items-center gap-10 sm:grid-cols-[1fr_auto] sm:gap-16'
+    aria-labelledby='intro'
+  >
+    <div class='measure'>
+      <p class='mb-4 text-lichen'>Hi, I’m Amin.</p>
+      <h1 id='intro' class='text-5xl sm:text-6xl'>
+        I build production infrastructure, and the AI systems that run on it.
+      </h1>
+      <p class='mt-6 text-xl'>
+        I’m a principal-level engineer and tech lead in the San Francisco Bay
+        Area. At E-Gen I design LLM pipelines and agent infrastructure. Before
+        that I led software delivery for Nuro’s autonomous vehicles and for
+        millions of Chromebooks and Android devices at Google. I love learning
+        and building new things, so get in touch if you have something in mind.
+      </p>
+      <div class='mt-8 flex flex-wrap gap-3'>
+        <a
+          href='/experience'
+          class='rounded-full bg-pine px-5 py-2.5 font-semibold text-paper transition-opacity hover:opacity-90'
+        >
+          See my experience
+        </a>
+      </div>
+    </div>
+
+    <Image
+      src={me}
+      alt='SpongeBob wearing a seaweed mustache, standing in for a photo of Amin'
+      widths={[224, 448, 672]}
+      sizes='(min-width: 640px) 224px, 176px'
+      loading='eager'
+      class='size-44 rounded-full object-cover ring-4 ring-amber ring-offset-4 ring-offset-paper sm:size-56'
+    />
+  </section>
+
+  <section class='mt-24 grid gap-12 md:grid-cols-2' aria-label='Highlights'>
+    <div>
+      <h2>Where I’ve been</h2>
+      <ul class='mt-4 divide-y divide-rule border-y border-rule'>
+        {recent.map((r) => (
+          <li class='flex items-baseline justify-between gap-4 py-3'>
+            <span>
+              <span class='font-semibold text-pine'>{r.where}</span>
+              <span class='block text-base text-lichen'>{r.what}</span>
+            </span>
+            <span class='shrink-0 text-base tabular-nums text-lichen'>
+              {r.when}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <a href='/experience' class='link mt-4 inline-block text-base'>
+        Full work history and education
+      </a>
+    </div>
+
+    <div>
+      <h2>Off the clock</h2>
+      <p class='mt-4'>
+        I run (barefoot, mostly), hike, dive, and travel whenever I can. I’m
+        also slowly working through an{' '}
+        <a href='/impossible_list' class='link'>
+          impossible list
+        </a>{' '}
+        of goals big enough that I’m not sure I can reach them, and keeping
+        track of the{' '}
+        <a href='/travels' class='link'>
+          places I’ve been
+        </a>
+        .
+      </p>
+    </div>
+  </section>
+</Base>

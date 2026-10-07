@@ -1,0 +1,52 @@
+---
+import Analytics from '../components/Analytics.astro'
+import Footer from '../components/Footer.astro'
+import Header from '../components/Header.astro'
+import { NAME } from '../data/site'
+import '../styles/global.css'
+
+type Props = {
+  title?: string
+  description?: string
+  // Sent with the page_view analytics event.
+  page: string
+}
+
+const {
+  title,
+  description = `${NAME} is a principal-level engineer in the San Francisco Bay Area building production infrastructure and AI systems.`,
+  page,
+} = Astro.props
+const fullTitle = title ? `${title} | ${NAME}` : NAME
+const canonical = new URL(Astro.url.pathname, Astro.site)
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <title>{fullTitle}</title>
+    <meta name='description' content={description} />
+    <link rel='canonical' href={canonical} />
+    <link rel='icon' href='/favicon.ico' />
+    <meta property='og:title' content={fullTitle} />
+    <meta property='og:description' content={description} />
+    <meta property='og:url' content={canonical} />
+    <meta property='og:type' content='website' />
+  </head>
+  <body data-page={page} class='flex min-h-dvh flex-col'>
+    <a
+      href='#main'
+      class='sr-only z-50 rounded bg-pine px-4 py-2 text-paper focus:not-sr-only focus:fixed focus:top-3 focus:left-3'
+    >
+      Skip to content
+    </a>
+    <Header />
+    <main id='main' class='mx-auto w-full max-w-5xl flex-1 px-5 pt-12 sm:pt-20'>
+      <slot />
+    </main>
+    <Footer />
+    <Analytics />
+  </body>
+</html>

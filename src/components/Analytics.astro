@@ -1,0 +1,30 @@
+---
+// Firebase Analytics. The config file is gitignored and written by CI from
+// the FIREBASE_CONFIG secret, so local builds without it simply skip analytics.
+const configs = import.meta.glob<{ firebaseConfig: object }>(
+  '../firebase.config.ts',
+  { eager: true },
+)
+const firebaseConfig = Object.values(configs)[0]?.firebaseConfig
+---
+
+{firebaseConfig && (
+  <firebase-analytics data-config={JSON.stringify(firebaseConfig)} />
+)}
+
+<script>
+  // Firebase is imported lazily so pages without the element never load it.
+  class FirebaseAnalytics extends HTMLElement {
+    async connectedCallback() {
+      const [{ initializeApp }, { getAnalytics, logEvent }] = await Promise.all(
+        [import('firebase/app'), import('firebase/analytics')],
+      )
+      const config = JSON.parse(this.dataset.config!)
+      const analytics = getAnalytics(initializeApp(config))
+      logEvent(analytics, 'page_view', {
+        page: document.body.dataset.page,
+      })
+    }
+  }
+  customElements.define('firebase-analytics', FirebaseAnalytics)
+</script>

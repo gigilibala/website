@@ -70,9 +70,9 @@ node_modules/
 # local env files
 .env*.local
 
-# next.js
-/.next/
-/out/
+# astro
+/.astro/
+/dist/
 
 # production
 /build
@@ -86,9 +86,8 @@ node_modules/
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
 
 # For secrets
-/app/firebase.config.ts
+/src/firebase.config.ts
 
 .pnp.*

@@ -1,0 +1,33 @@
+---
+import packageJson from '../../package.json'
+import { EMAIL, NAME } from '../data/site'
+
+const year = new Date().getFullYear()
+---
+
+<footer class='mt-24 border-t border-rule'>
+  <div class='mx-auto flex max-w-5xl flex-col gap-2 px-5 py-8 text-sm text-lichen sm:flex-row sm:justify-between'>
+    <p>
+      © {year}
+      {NAME}. Say hello at{' '}
+      <a class='link' href={`mailto:${EMAIL}`}>
+        {EMAIL}
+      </a>
+      .
+    </p>
+    <p>
+      Built with{' '}
+      <a class='link' href='https://astro.build'>
+        Astro
+      </a>{' '}
+      and hosted on{' '}
+      <a class='link' href='https://firebase.google.com'>
+        Firebase
+      </a>
+      .{' '}
+      <a class='link' href='https://github.com/gigilibala/website'>
+        Version {packageJson.version}
+      </a>
+    </p>
+  </div>
+</footer>

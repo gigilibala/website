@@ -1,0 +1,75 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+@import '@fontsource-variable/karla';
+@import '@fontsource-variable/bricolage-grotesque';
+
+@theme {
+  --font-sans: 'Karla Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Bricolage Grotesque Variable', ui-sans-serif, sans-serif;
+
+  --color-paper: #eef3ec;
+  --color-surface: #f8faf6;
+  --color-ink: #1c2a24;
+  --color-pine: #12372a;
+  --color-amber: #b8731a;
+  --color-lichen: #5f7a6b;
+  --color-rule: #c9d6cd;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-paper: #0f1f18;
+    --color-surface: #152a21;
+    --color-ink: #e2ebe5;
+    --color-pine: #a9d5bd;
+    --color-amber: #e3a14a;
+    --color-lichen: #93ab9e;
+    --color-rule: #284236;
+  }
+}
+
+@layer base {
+  html {
+    color-scheme: light dark;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans text-lg leading-relaxed antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display text-pine tracking-tight;
+    text-wrap: balance;
+  }
+
+  h1 {
+    @apply text-4xl font-bold leading-[1.05] sm:text-5xl;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold;
+  }
+
+  h3 {
+    @apply text-xl font-semibold;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-amber rounded-sm;
+  }
+}
+
+@utility link {
+  @apply text-pine underline decoration-amber decoration-2 underline-offset-4 transition-colors hover:decoration-pine;
+}
+
+@utility measure {
+  max-width: 68ch;
+}

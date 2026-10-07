@@ -1,0 +1,65 @@
+---
+import type { MapData } from '../lib/maps'
+
+type Props = { map: MapData; label: string }
+const { map, label } = Astro.props
+---
+
+<svg
+  viewBox={`0 0 ${map.width} ${map.height}`}
+  role='img'
+  aria-label={label}
+  class='visited-map h-auto w-full'
+>
+  {map.regions.map((r) => (
+    <path
+      d={r.d}
+      class:list={[r.home ? 'home' : r.visited ? 'visited' : 'unvisited']}
+    >
+      <title>{r.name}</title>
+    </path>
+  ))}
+  {map.regions
+    .filter((r) => r.marker)
+    .map((r) => (
+      <circle
+        cx={r.marker![0]}
+        cy={r.marker![1]}
+        r='5'
+        class:list={['marker', r.home && 'home']}
+      >
+        <title>{r.name}</title>
+      </circle>
+    ))}
+</svg>
+
+<style>
+  .visited-map path {
+    stroke: var(--color-paper);
+    stroke-width: 0.6;
+    stroke-linejoin: round;
+    transition: opacity 120ms;
+  }
+  .visited-map path:hover {
+    opacity: 0.75;
+  }
+  .unvisited {
+    fill: var(--color-rule);
+  }
+  .visited {
+    fill: var(--color-pine);
+  }
+  .home {
+    fill: var(--color-amber);
+  }
+  .marker {
+    fill: var(--color-pine);
+    stroke: var(--color-paper);
+    stroke-width: 1.5;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .visited-map path {
+      transition: none;
+    }
+  }
+</style>

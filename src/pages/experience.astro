@@ -1,0 +1,150 @@
+---
+import {
+  EDUCATION,
+  EXPERIENCE,
+  SKILL_GROUPS,
+  SUMMARY,
+  yearSpan,
+} from '../data/resume'
+import Base from '../layouts/Base.astro'
+---
+
+<Base
+  title='Experience'
+  page='experience'
+  description='Work history, education, and skills of Amin Hassani: E-Gen, Nuro, Google, and a PhD in Computer Science.'
+>
+  <div class='measure space-y-4'>
+    <h1>Experience</h1>
+    <p class='text-xl'>{SUMMARY}</p>
+    <p>
+      I know Linux and Unix-based operating systems deeply, from kernel work up
+      through security, large-scale message passing, cloud and distributed
+      systems, and robotics. These days I spend most of my time on LLM
+      pipelines, agents, and model serving. I also do full-stack web and mobile
+      development, and I’m always eager to learn new technologies.
+    </p>
+  </div>
+
+  <section class='mt-16' aria-labelledby='work'>
+    <h2 id='work' class='sr-only'>
+      Work
+    </h2>
+    <ol class='relative'>
+      {EXPERIENCE.map((role) => (
+        <li class='timeline-item'>
+          <p class='timeline-year'>{yearSpan(role.start, role.end)}</p>
+          <div class='timeline-body'>
+            <h3>
+              {role.companyUrl ? (
+                <a href={role.companyUrl} class='hover:underline'>
+                  {role.company}
+                </a>
+              ) : (
+                role.company
+              )}
+              {role.note && (
+                <span class='font-sans text-base font-normal text-lichen'>
+                  {' '}
+                  ({role.note})
+                </span>
+              )}
+            </h3>
+            <p class='text-base text-lichen'>
+              {role.title}, {role.location}.{' '}
+              <span class='whitespace-nowrap'>
+                {role.start} to {role.end ?? 'present'}
+              </span>
+            </p>
+            <ul class='mt-3 list-disc space-y-1.5 pl-5 marker:text-amber'>
+              {role.highlights.map((h) => (
+                <li>{h}</li>
+              ))}
+            </ul>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class='mt-20' aria-labelledby='education'>
+    <h2 id='education' class='mb-8 text-3xl'>
+      Education
+    </h2>
+    <ol>
+      {EDUCATION.map((d) => (
+        <li class='timeline-item'>
+          <p class='timeline-year'>{yearSpan(d.start, d.end)}</p>
+          <div class='timeline-body'>
+            <h3>{d.degree}</h3>
+            <p class='text-base text-lichen'>
+              {d.school}, {d.location}
+            </p>
+            <p class='mt-3'>
+              <span class='font-semibold'>Thesis:</span> <cite>{d.thesis}</cite>
+            </p>
+            {d.detail && <p class='mt-1 text-base'>{d.detail}</p>}
+          </div>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class='mt-20' aria-labelledby='skills'>
+    <h2 id='skills' class='text-3xl'>
+      Languages and tools
+    </h2>
+    <p class='mt-2 text-lichen'>What I’ve used professionally.</p>
+    <div class='mt-8 space-y-10'>
+      {SKILL_GROUPS.map((group) => (
+        <div>
+          <h3 class='text-lg text-ink'>{group.title}</h3>
+          <ul class='mt-4 grid grid-cols-3 gap-3 sm:grid-cols-5 lg:grid-cols-7'>
+            {group.skills.map((s) => (
+              <li class='flex flex-col items-center gap-2 rounded-lg bg-surface px-2 py-4 text-center text-sm'>
+                <img
+                  src={s.icon}
+                  alt=''
+                  width='40'
+                  height='40'
+                  loading='lazy'
+                  class='size-10'
+                />
+                {s.name}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>
+
+<style>
+  @reference '../styles/global.css';
+
+  /* Years sit in a left gutter; a rule with a marker per entry joins them. */
+  .timeline-item {
+    @apply relative grid gap-1 pb-12 pl-6 sm:grid-cols-[8.5rem_1fr] sm:gap-8 sm:pl-0;
+  }
+  .timeline-item::before {
+    content: '';
+    @apply absolute top-2 bottom-0 left-0 w-px bg-rule sm:left-[9.5rem];
+  }
+  .timeline-item:last-child::before {
+    @apply hidden;
+  }
+  .timeline-item::after {
+    content: '';
+    @apply absolute top-2 -left-[5px] size-[11px] rounded-full border-2 border-amber bg-paper sm:left-[calc(9.5rem-5px)];
+  }
+  .timeline-year {
+    @apply font-display text-xl font-bold tabular-nums text-amber sm:text-right sm:text-2xl sm:leading-tight;
+  }
+  .timeline-body {
+    @apply measure sm:pl-6;
+  }
+  .timeline-body h3 {
+    @apply text-2xl;
+  }
+</style>
