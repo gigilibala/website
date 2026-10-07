@@ -4,7 +4,16 @@
 name: Deploy to Firebase Hosting on merge
 
 on:
+  push:
+    branches:
+      - main
+  # Manual runs; like pushes, they deploy only when a new release is cut.
   workflow_dispatch:
+
+# Deploy one release at a time; a newer merge waits instead of racing.
+concurrency:
+  group: firebase-hosting-deploy
+  cancel-in-progress: false
 
 jobs:
   build_and_deploy:
