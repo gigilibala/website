@@ -2,9 +2,16 @@
 import { geoEqualEarth, geoPath, type GeoProjection } from 'd3-geo'
 import { feature } from 'topojson-client'
 import { presimplify, simplify } from 'topojson-simplify'
-import type { GeometryCollection, Topology } from 'topojson-specification'
+import type {
+  GeometryCollection,
+  Objects,
+  Topology,
+} from 'topojson-specification'
 import usAtlas from 'us-atlas/states-albers-10m.json'
 import worldAtlas from 'world-atlas/countries-110m.json'
+
+// Every region in both atlases has a `name` property.
+type Atlas = Topology<Objects<{ name: string }>>
 
 export type Region = {
   name: string
@@ -21,7 +28,7 @@ export type MapData = { width: number; height: number; regions: Region[] }
 const SMALL_AREA = 40
 
 function build(
-  topology: Topology,
+  topology: Atlas,
   object: string,
   width: number,
   height: number,
@@ -74,7 +81,7 @@ function build(
 
 export function worldMap(visited: string[], home: string): MapData {
   return build(
-    worldAtlas as unknown as Topology,
+    worldAtlas as unknown as Atlas,
     'countries',
     960,
     470,
@@ -90,7 +97,7 @@ export function worldMap(visited: string[], home: string): MapData {
 export function usMap(visited: string[], home: string): MapData {
   // us-atlas ships this file pre-projected (Albers USA) into a 975×610 frame.
   return build(
-    usAtlas as unknown as Topology,
+    usAtlas as unknown as Atlas,
     'states',
     975,
     610,
