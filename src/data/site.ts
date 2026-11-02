@@ -1,5 +1,5 @@
 export const NAME = 'Amin Hassani'
-export const EMAIL = 'ahassani4@gmail.com'
+export const EMAIL = 'amin@aminhassani.com'
 
 export type NavLink = { href: string; label: string }
 
