@@ -44,7 +44,13 @@ resource "google_iam_workload_identity_pool_provider" "github" {
     "attribute.repository" = "assertion.repository"
   }
 
-  attribute_condition = "assertion.repository == \"${var.github_repo}\""
+  # The two workflows both run with a main ref: pull_request_target takes the base
+  # branch's. A workflow on any other branch can't get a token.
+  attribute_condition = join(" && ", [
+    "assertion.repository == \"${var.github_repo}\"",
+    "assertion.repository_id == \"${var.github_repo_id}\"",
+    "assertion.ref == \"refs/heads/main\"",
+  ])
 
   oidc {
     issuer_uri = "https://token.actions.githubusercontent.com"

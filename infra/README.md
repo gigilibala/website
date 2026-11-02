@@ -72,6 +72,13 @@ terraform -chdir=infra/envs/prd output -raw workload_identity_provider
 terraform -chdir=infra/envs/prd output -raw github_actions_service_account
 ```
 
+The WIF provider only accepts a token whose `repository`, `repository_id` and
+`ref` claims are this repo, its numeric ID, and `refs/heads/main`, so a workflow
+pushed to another branch can't deploy. Previews and the live deploy both still
+work: `pull_request_target` runs with the base branch's ref, and the live deploy
+runs on `main`. The ID is public and comes from
+`gh api repos/gigilibala/website --jq .id`.
+
 ## Verification (no credentials)
 
 ```sh

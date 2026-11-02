@@ -10,10 +10,11 @@ module "firebase" {
 }
 
 module "iam" {
-  source      = "../../modules/iam"
-  project_id  = local.project_id
-  github_repo = local.github_repo
-  depends_on  = [module.services]
+  source         = "../../modules/iam"
+  project_id     = local.project_id
+  github_repo    = local.github_repo
+  github_repo_id = local.github_repo_id
+  depends_on     = [module.services]
 }
 
 module "budget" {

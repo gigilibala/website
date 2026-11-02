@@ -13,13 +13,13 @@ env:
   WIF_SERVICE_ACCOUNT: github-actions@aminhassani-prd.iam.gserviceaccount.com
 
 jobs:
+  # Runs the PR's code, so it gets no cloud access: it only leaves dist behind
+  # for deploy_preview.
   build_and_preview:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      id-token: write
-      pull-requests: write
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
@@ -52,6 +52,54 @@ jobs:
       - name: Build Website
         run: yarn build
 
+      - name: Upload Build
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+          retention-days: 1
+
+  # Holds the cloud access, so it must never run the PR's code: it checks out the
+  # base branch, and firebase-tools comes from that branch's lockfile. The main
+  # ruleset requires a check with this name.
+  deploy_preview:
+    name: Deploy Preview
+    needs: build_and_preview
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+      pull-requests: write
+    steps:
+      # A fork's build is skipped, and a skipped required check counts as passing.
+      # Failing here keeps fork PRs unmergeable.
+      - name: Require a Passing Build
+        if: needs.build_and_preview.result != 'success'
+        run: exit 1
+
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Install Packages
+        run: yarn --immutable
+
+      - name: Download Build
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
       - uses: google-github-actions/auth@v3
         with:
           workload_identity_provider: ${{ env.WIF_PROVIDER }}
@@ -59,24 +107,31 @@ jobs:
 
       - name: Deploy preview channel
         id: deploy
+        env:
+          PR_NUMBER: ${{ github.event.number }}
         run: |
-          output=$(yarn firebase hosting:channel:deploy pr-${{ github.event.number }} --project aminhassani-prd --json)
+          output=$(yarn firebase hosting:channel:deploy "pr-$PR_NUMBER" --project aminhassani-prd --json)
           url=$(echo "$output" | jq -r '.result|to_entries[0].value.url')
           echo "url=$url" >> $GITHUB_OUTPUT
 
       - name: Post preview URL on PR
         uses: actions/github-script@v7
+        env:
+          PREVIEW_URL: ${{ steps.deploy.outputs.url }}
         with:
           script: |
-            const url = '${{ steps.deploy.outputs.url }}';
+            const url = process.env.PREVIEW_URL;
             const marker = '<!-- firebase-preview -->';
             const body = `${marker}\n🔥 **Firebase Preview:** ${url}`;
-            const comments = await github.rest.issues.listComments({
+            const comments = await github.paginate(github.rest.issues.listComments, {
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number,
+              per_page: 100,
             });
-            const existing = comments.data.find(c => c.body.includes(marker));
+            const existing = comments.find(
+              c => c.user?.login === 'github-actions[bot]' && c.body.includes(marker),
+            );
             if (existing) {
               await github.rest.issues.updateComment({
                 owner: context.repo.owner,
@@ -92,13 +147,3 @@ jobs:
                 body,
               });
             }
-
-  # The main ruleset also requires a check named "Deploy Preview". The Firebase
-  # action used to post it; this job keeps that name passing.
-  deploy_preview:
-    name: Deploy Preview
-    needs: build_and_preview
-    runs-on: ubuntu-latest
-    permissions: {}
-    steps:
-      - run: echo "Preview deployed"

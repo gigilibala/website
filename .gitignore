@@ -95,3 +95,7 @@ node_modules/
 # Terraform
 .terraform/
 *.tfplan
+*.tfstate
+*.tfstate.*
+*.tfvars
+crash.log
