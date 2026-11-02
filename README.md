@@ -37,4 +37,29 @@ Most content lives in typed data files rather than in the pages:
 ### Analytics
 
 Firebase Analytics loads only when `src/firebase.config.ts` exists. It is
-gitignored and written by CI from the `FIREBASE_CONFIG` secret.
+gitignored and written by CI from the `FIREBASE_CONFIG` secret. That config still
+belongs to the old project, `personal-website-c9eaf`, so Analytics keeps
+collecting there while Hosting runs on `aminhassani-prd`.
+
+### Deployment
+
+The site runs on Firebase Hosting in the `aminhassani-prd` project.
+
+- **Pull requests:** each PR from this repo deploys to a preview channel, and its
+  URL is posted on the PR. The `build_and_preview` job runs the PR's code with no
+  cloud access and uploads `dist`. The `Deploy Preview` job then deploys that
+  `dist` from `main`'s code, so a PR's `firebase.json` changes don't show in its
+  preview. Fork PRs aren't built, and `Deploy Preview` fails on them, so they can't
+  merge.
+- **Merges:** a `feat:`, `fix:` or `perf:` commit on `main` cuts a release, which
+  builds and deploys the site. Other commits deploy nothing. A release only pushes
+  a `v*` tag, so `package.json` on `main` keeps its old version and previews show
+  it; the live build gets the new one.
+- **Authentication:** GitHub Actions signs in through Workload Identity Federation,
+  which replaced the old service account key.
+- **`firebase-tools`** is a dev dependency, pinned by the lockfile. `cookie` is
+  declared alongside it to keep Astro's version at the top level; otherwise the
+  older copy Express brings in is hoisted and breaks `yarn build`.
+
+The Terraform and the runbook, including the DNS swap for
+`www.aminhassani.com`, are in [`infra/README.md`](infra/README.md).
