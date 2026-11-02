@@ -91,3 +91,7 @@ node_modules/
 /src/firebase.config.ts
 
 .pnp.*
+
+# Terraform
+.terraform/
+*.tfplan
