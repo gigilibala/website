@@ -7,11 +7,13 @@ export const VISITED_COUNTRIES = [
   'Cuba',
   'Cyprus',
   'Iran',
+  'Japan',
   'Malaysia',
   'Mexico',
   'Turkey',
   'United Arab Emirates',
   'United States of America',
+  'Vietnam',
 ]
 
 export const HOME_STATE = 'California'
